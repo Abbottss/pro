@@ -1,0 +1,240 @@
+*{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	display:block;
+}
+
+/*头部*/
+.top{
+	height:34px;
+	background:#F2F2F2;
+	border-bottom:1px solid #e5e5e5;
+	
+}
+.top_cen{
+	width:1194px;
+	height:34px;
+	background:#F2F2F2;
+	margin:0 auto;
+	overflow:hidden;
+}
+.top_cen p{
+	font-size:11px;
+	color:#6c6c6c;
+	margin-top:11px;
+	float:left;
+}
+.top_cen p a{
+	text-decoration: underline;
+	color:#ec3e7d;
+	margin:0 4px;
+}
+.top_cen p span{
+	margin-left:15px;
+}
+.top_cen ul{
+	float:right;
+}
+.top_cen ul li{
+	float:left;
+	margin-left:24px;
+	line-height:1;
+	padding-top:11px;
+	padding-bottom:12px;
+}
+.top_cen ul li a{
+	font-size:11px;
+	color:#6c6c6c;
+	margin-left:4px;
+}
+.top_cen ul li img{
+	float:left;
+	
+}
+.top_cen ul li .img1,.top_cen ul li .img2{
+	float:right;
+	margin-left:4px;
+}
+.top_cen ul li .img1{
+	margin-top:8px;
+}
+.top_cen  #list{
+	width:81px;
+	height:140px;
+	background:#ffffff;
+	display:none;
+	position:absolute;
+	top:35px;
+	left:672px;
+}
+.top_cen  #list dd{
+	text-align:center;
+	margin-top:13px;
+}
+.top_cen  #list dd a{
+	font-size:11px;
+	color:#6c6c6c;
+}
+.top_cen ul .l1{
+	position:relative;
+	top:0;
+	left:0;
+}
+.top_cen .i1{
+	width:102px;
+	height:102px;
+	position:absolute;
+	top:33px;
+	left:1220px;
+	display:none;
+} 
+.top_cen .i2{
+	width:102px;
+	height:102px;
+	position:absolute;
+	top:33px;
+	left:1220px;
+	display:none;
+} 
+.top_cen #box{
+	width:250px;
+	height:60px;
+	background:#ffffff;
+	position:absolute;
+	top:33px;
+	left:610px;
+	display:none;
+}
+.top_cen #box p{
+	font-size:11px;
+	color:#6c6c6c;
+	margin-left:100px;
+}
+
+
+/*页面*/
+.box{
+	height:645px;
+	background:#ffffff;
+}
+.box_cen{
+	height:645px;
+	width:1194px;
+	background:#ffffff;
+	margin:0 auto;
+}
+.box_cen .logo{
+	padding-top:22px;
+	margin-left:56px;
+}
+.box_cen .map{
+	margin-top:147px;
+	margin-left:56px;
+	/*float:left;*/
+}
+.box_cen .txt{
+	width:421px;
+	height:511px;
+	background:#ffffff;
+	float:right;
+	margin-top:-436px;
+	margin-right:117px;
+	box-shadow:5px 5px 40px 2px #ebebeb;
+}
+.box_cen .txt h2{
+	font-size:20px;
+	color:#5a5d6c;
+	font-weight:normal;
+	float:left;
+	margin-right:116px;
+	margin-top:38px;
+	margin-left:35px;
+}
+.box_cen .txt .or{
+	font-size:11px;
+	color:#5a5d6c;
+	margin-top:40px;
+}
+.box_cen .txt .or a{
+	font-size:11px;
+	color:#ec3e7d;
+	margin-left:6px;
+}
+.box_cen .txt form .inp{
+	width:348px;
+	height:36px;
+	font-size:12px;
+	color:#999999;
+	padding-left:4px;
+	margin-top:25px;
+	margin-left:35px;
+}
+.box_cen .txt form .ck{
+	float:left;
+	margin-left:35px;
+	margin-top:21px;
+	margin-right:14px;
+}
+.box_cen .txt form .agree{
+	font-size:12px;
+	color:#3e3e3e;
+	margin-top:18px;
+	
+}
+.box_cen .txt form .agree a{
+	font-size:12px;
+	color:#ed3f7e;
+	margin-left:22px;
+}
+.box_cen .txt form .a1{
+	margin-top:36px;
+}
+.box_cen .txt form .ck1{
+	margin-top:38px;
+}
+.box_cen .txt form .log{
+	width:350px;
+	height:40px;
+	font-size:14px;
+	color:#ffffff;
+	background:#ec3e7d;
+	border:0;
+	margin-left:35px;
+	margin-top:21px;
+}
+.box_cen .txt form .deng{
+	font-size:12px;
+	color:#3e3e3e;
+	margin-left:35px;
+	margin-top:56px;
+}
+.box_cen .txt form .mode{
+	
+	margin-left:35px;
+	margin-top:22px;
+	float:left;
+}
+.box_cen .txt form  span{
+	font-size:11px;
+	color:#3e3e3e;
+	float:left;
+	margin-top:30px;
+}
+/*.box_cen .txt form #s1{
+	font-size:12px;
+	color:red;	
+	margin-left:35px;
+}
+.box_cen .txt form #s2{
+	font-size:12px;
+	color:red;	
+	margin-left:35px;
+}*/

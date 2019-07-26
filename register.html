@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/register.css" />
+	<body>
+		<!--头部-->
+		<div class="top">
+			<div class="top_cen">
+				<p>欢迎光临莎莎网！<span><a href="login.html">登录</a>或<a href="register.html">免费注册</a></span></p>
+			
+				<ul>
+					<li class="l1">
+						<div id="me">
+							<img src="img/top1.jpg"  /><a href="">我的账户</a><img src="img/top2.jpg"  class="img1"/>
+						</div>
+						
+					</li>
+					<li id="gou"><img src="img/top3.jpg"  /><a href="">我的购物车</a></li>
+					<li ><img src="img/top44.jpg"  /><a href="">我的收藏</a></li>
+					<li><a href="">我的站内信</a></li>
+					<li><a href="">积分中心</a></li>
+					<li><a href="">Global site</a></li>
+					<li class="guan"><a href="">关注我们</a><img src="img/top5.png"  class="img2" id="imga"/><img src="img/top6.png"  class="img2" id="imgb"/></li>
+				</ul>
+				<ol id="list">
+					<dd><a href="">我的订单</a></dd>
+					<dd><a href="">我的积分</a></dd>
+					<dd><a href="">我的优惠券</a></dd>
+					<dd><a href="">我的收藏</a></dd>
+					<dd><a href="">我的评价</a></dd>
+				</ol>
+				<img src="img/t1.jpg" alt=""  class="i1"/>
+				<img src="img/t2.jpg" alt="" class="i2"/>
+				<div id="box">
+					<p>购物车中还没有商品</p>
+					<p>快去挑选吧</p>
+				</div>
+			</div>
+		</div>
+		
+		<!--页面-->
+		<div class="box">
+			<div class="box_cen">
+				<img src="img/reg1.png" alt="" class="logo"/>
+				<img src="img/reg2.jpg" alt="" class="map"/>
+				<div class="txt">
+					<h2>注册账号</h2>
+					<p class="or">已有莎莎网账号？<a href="login.html">立即登录</a></p>
+					<form action="login.html">
+						<input type="text" placeholder="请输入手机号" class="inp" id="uname"/><br /><span id="s1"></span>
+						<input type="text" placeholder="请输入密码6-16位字母和数字的组合" class="inp" id="upwd"/><br /><span id="s2"></span>
+						<input type="text" placeholder="再次填写密码" class="inp" id="qupwd"/><br /><span id="s3"></span>
+						<input type="checkbox" class="ck ck1"/>
+						<p class="agree a1">你已阅读及接受 使用条款 及 隐私政策</p>
+						<input type="checkbox"  class="ck"/>
+						<p class="agree">我不同意莎莎使用我的个人资料作直接促销</p>
+						<input type="submit" value="注册" class="reg" id="sub"/>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script src="js/jquery-1.11.1.js"></script>
+<!--<script src="js/register-longin.js"></script>-->
+<script>
+	//注册
+	let sub = document.getElementById( "sub" );
+	sub.onclick = function(){
+		let userJson = {
+			"uname" : uname.value,
+			"upwd" : upwd.value,
+			"qupwd" : qupwd.value
+		}
+		document.cookie = "userinfo=" + JSON.stringify( userJson );
+		if(flagName&&flagUpwd&&flagQupwd){
+			location.href = "login.html";
+			return true;
+			
+		}else{
+			return false;
+		}
+	}
+		
+	
+	//验证用户名
+	let flagName = null;
+	uname.onblur = function(){
+		let userName = this.value;
+		let reg = /^1[3578]\d{9}$/;
+		if( reg.test( userName ) ){
+			flagName = true ;
+			s1.innerHTML = "";
+		}else{
+			flagName = false ;
+			s1.innerHTML = "请输入正确的手机号";
+		}
+	}
+	let flagUpwd = null;
+	upwd.onblur = function(){
+		let userUpwd = this.value;
+		let reg = /^\d|[a-z]{6,16}$/i;
+		if( reg.test( userUpwd ) ){
+			flagUpwd = true ;
+			s2.innerHTML = "";
+		}else{
+			flagUpwd = false ;
+			s2.innerHTML = "请输入正确的密码";
+		}
+	}
+	let flagQupwd = null;
+	qupwd.onblur = function(){
+		
+		if( upwd.value == qupwd.value ){
+			flagQupwd = true ;
+			s3.innerHTML = "";
+		}else{
+			flagQupwd = false ;
+			s3.innerHTML = "请输入正确的密码";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	//头部
+	let $list = $( ".top_cen ul li" );
+	let $l1 = $( ".top_cen ul .l1" );
+	let $oli = $( "#list" );
+	let $guana = $( ".top_cen ul .guan #imga" );
+	let $guanb = $( ".top_cen ul .guan #imgb" );
+	let $gou = $( ".top_cen ul #gou" );
+	//头部ul添加事件
+	$list.mouseenter( function(){
+		$(this).css( "background","#ffffff" );
+	} ).mouseleave( function(){
+		$(this).css( "background","#F2F2F2" );
+	} )
+	//头部第一个li添加事件
+	$l1.mouseenter( function(){
+		$oli.slideDown();
+	} ).mouseleave( function(){
+		$oli.slideUp();
+	} )
+	//头部的购物车添加事件
+	$gou.mouseenter( function(){
+		$( ".top_cen #box" ).css( "display","block" );
+	} ).mouseleave( function(){
+		$( ".top_cen #box" ).css( "display","none" );
+	} )
+	//头部最后一个li的图片添加事件
+	$guana.mouseenter( function(){
+		$( ".top_cen .i1" ).css( "display","block" );
+	} ).mouseleave( function(){
+		$( ".top_cen .i1" ).css( "display","none" );
+	} )
+	$guanb.mouseenter( function(){
+		$( ".top_cen .i2" ).css( "display","block" );
+	} ).mouseleave( function(){
+		$( ".top_cen .i2" ).css( "display","none" );
+	} )
+	
+	
+	
+	
+</script>

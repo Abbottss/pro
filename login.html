@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/login.css" />
+	<body>
+		<!--头部-->
+		<div class="top">
+			<div class="top_cen">
+				<p>欢迎光临莎莎网！<span><a href="login.html">登录</a>或<a href="register.html">免费注册</a></span></p>
+			
+				<ul>
+					<li class="l1">
+						<div id="me">
+							<img src="img/top1.jpg"  /><a href="">我的账户</a><img src="img/top2.jpg"  class="img1"/>
+						</div>
+						
+					</li>
+					<li id="gou"><img src="img/top3.jpg"  /><a href="">我的购物车</a></li>
+					<li ><img src="img/top44.jpg"  /><a href="">我的收藏</a></li>
+					<li><a href="">我的站内信</a></li>
+					<li><a href="">积分中心</a></li>
+					<li><a href="">Global site</a></li>
+					<li class="guan"><a href="">关注我们</a><img src="img/top5.png"  class="img2" id="imga"/><img src="img/top6.png"  class="img2" id="imgb"/></li>
+				</ul>
+				<ol id="list">
+					<dd><a href="">我的订单</a></dd>
+					<dd><a href="">我的积分</a></dd>
+					<dd><a href="">我的优惠券</a></dd>
+					<dd><a href="">我的收藏</a></dd>
+					<dd><a href="">我的评价</a></dd>
+				</ol>
+				<img src="img/t1.jpg" alt=""  class="i1"/>
+				<img src="img/t2.jpg" alt="" class="i2"/>
+				<div id="box">
+					<p>购物车中还没有商品</p>
+					<p>快去挑选吧</p>
+				</div>
+			</div>
+		</div>
+		
+		<!--页面-->
+		<div class="box">
+			<div class="box_cen">
+				<img src="img/reg1.png" alt="" class="logo"/>
+				<img src="img/reg2.jpg" alt="" class="map"/>
+				<div class="txt">
+					<h2>用户登录</h2>
+					<p class="or">还没有莎莎网账号？<a href="register.html">立即注册</a></p>
+					<form action="homePage.html">
+						<input type="text" placeholder="邮箱/手机号" class="inp" id="uname"/><br /><span id="s1"></span>
+						<input type="text" placeholder="填写密码" class="inp" id="upwd"/><br /><span id="s2"></span>
+						<input type="checkbox" class="ck ck1"/>
+						<p class="agree a1">记住我<a href="">忘记密码？</a></p>
+						<input type="submit" value="登录" class="log" id="log"/>
+						<p class="deng">第三方登录</p>
+						<a href="" class="mode"><img src="img/login01.jpg" alt="" /></a><span>QQ登录</span>
+						<a href="" class="mode"><img src="img/login02.jpg" alt="" /></a><span>微博登录</span>
+						<a href="" class="mode"><img src="img/login03.jpg" alt="" /></a><span>支付宝登录</span>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script src="js/jquery-1.11.1.js"></script>
+<!--<script src="js/register-longin.js"></script>-->
+<script>
+	//头部
+	//window.onload = function(){
+		let $list = $( ".top_cen ul li" );
+		let $l1 = $( ".top_cen ul .l1" );
+		let $oli = $( "#list" );
+		let $guana = $( ".top_cen ul .guan #imga" );
+		let $guanb = $( ".top_cen ul .guan #imgb" );
+		let $gou = $( ".top_cen ul #gou" );
+		//头部ul添加事件
+		$list.mouseenter( function(){
+			$(this).css( "background","#ffffff" );
+		} ).mouseleave( function(){
+			$(this).css( "background","#F2F2F2" );
+		} )
+		//头部第一个li添加事件
+		$l1.mouseenter( function(){
+			$oli.slideDown();
+		} ).mouseleave( function(){
+			$oli.slideUp();
+		} )
+		//头部的购物车添加事件
+		$gou.mouseenter( function(){
+			$( ".top_cen #box" ).css( "display","block" );
+		} ).mouseleave( function(){
+			$( ".top_cen #box" ).css( "display","none" );
+		} )
+		//头部最后一个li的图片添加事件
+		$guana.mouseenter( function(){
+			$( ".top_cen .i1" ).css( "display","block" );
+		} ).mouseleave( function(){
+			$( ".top_cen .i1" ).css( "display","none" );
+		} )
+		$guanb.mouseenter( function(){
+			$( ".top_cen .i2" ).css( "display","block" );
+		} ).mouseleave( function(){
+			$( ".top_cen .i2" ).css( "display","none" );
+		} )
+	
+	
+	//用户登录
+		let str = document.cookie;
+		let arr = str.split( "; " );
+		let userTxt = "";
+		for( let i = 0 ; i < arr.length ; i++ ){
+			let item = arr[i].split( "=" );
+			if( item[0] == "userinfo" ){
+				userTxt =item[1];
+			}
+		}
+		let userJson = JSON.parse( userTxt );
+		console.log( userJson )
+		log.onclick = function(){
+			if( uname.value == userJson.uname && upwd.value == userJson.upwd ){
+				location.href = "homePage.html";
+				return true;
+				//alert( "登陆成功" )
+				
+			}else {
+				return false;		
+			}
+		}
+		
+	//}
+		
+	
+</script>
